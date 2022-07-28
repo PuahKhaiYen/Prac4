@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/aFragment">
+
+    <fragment
+        android:id="@+id/aFragment"
+        android:name="com.example.prac4.aFragment"
+        android:label="aFragment" >
+        <action
+            android:id="@+id/action_aFragment_to_bFragment"
+            app:destination="@id/bFragment"
+            app:enterAnim="@android:anim/slide_in_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/bFragment"
+        android:name="com.example.prac4.bFragment"
+        android:label="fragment_b"
+        tools:layout="@layout/fragment_b" >
+        <action
+            android:id="@+id/action_bFragment_to_cFragment"
+            app:destination="@id/cFragment"
+            app:popUpTo="@id/aFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cFragment"
+        android:name="com.example.prac4.cFragment"
+        android:label="fragment_c"
+        tools:layout="@layout/fragment_c" />
+</navigation>
